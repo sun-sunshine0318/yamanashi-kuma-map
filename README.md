@@ -1,13 +1,34 @@
 # 山梨県 ツキノワグマ出没マップ（非公式）
 
+**公開ページ：https://sun-sunshine0318.github.io/yamanashi-kuma-map/**
+
 山梨県自然共生推進課の X（[@yamanashishizen](https://x.com/yamanashishizen)）が発信するツキノワグマ出没速報を、地図に表示する非公式 Web アプリです。
 
 **非公式マップです。正確な情報は元投稿と[山梨県公式ページ](https://www.pref.yamanashi.jp/shizen/kuma2.html)をご確認ください。**
 
-## データの流れ
+## しくみ
 
-1. `scripts/fetch.mjs` … X API から新着投稿を取得して `data/posts.json` に追記（GitHub Actions で実行）
-2. `scripts/build.mjs` … 投稿を読み取り、国土地理院の住所検索で座標に変換して `data/sightings.json` を作成
+1. GitHub Actions（[update.yml](.github/workflows/update.yml)）が **15分ごと** に動きます
+2. `scripts/fetch.mjs` … X API から前回以降の新着投稿だけを取得して `data/posts.json` に追記
+3. `scripts/build.mjs` … 投稿を読み取り、国土地理院の住所検索で座標に変換して `data/sightings.json` を作成
+4. 変更があればコミット → GitHub Pages に自動で反映（数分かかります）
+
+地図は MapLibre GL JS ＋ OpenFreeMap（`map/style.json` は `node scripts/make-style.mjs` で作成）。ビルド不要の静的サイトです。
+
+## 運用メモ
+
+| こんなとき | どうする |
+|---|---|
+| 自動更新が失敗した | 「自動更新エラー」ラベルの Issue が自動で作られます。本文の対処を確認してください。次に成功すると自動で閉じます |
+| X のトークンを変えたい | `gh secret set X_BEARER_TOKEN` で登録し直す |
+| すぐに更新したい | GitHub の Actions →「出没情報を更新」→「Run workflow」 |
+| ピンの位置を直したい | 下の「位置を手動で直すには」 |
+| 投稿の書式が変わった | Actions の実行結果の Summary に「地図に出さない投稿」が出ます。`scripts/lib/parse.mjs` のルールを直し、`node scripts/build.mjs` で作り直せます（X API は使いません） |
+
+- 公開リポジトリは60日間更新がないと定期実行が止まるため、[keepalive.yml](.github/workflows/keepalive.yml) が毎月1日に維持用コミットをします。
+- 画面上部の「最終更新」は、新しい出没情報が最後に反映された時刻です（確認自体は15分ごと）。
+
+## データファイル
 
 | ファイル | 内容 |
 |---|---|
@@ -33,4 +54,10 @@
 }
 ```
 
-正しい緯度・経度は [地理院地図](https://maps.gsi.go.jp/) で地点をクリックすると確認できます。
+正しい緯度・経度は [地理院地図](https://maps.gsi.go.jp/) で地点をクリックすると確認できます。次の自動更新（15分以内）で地図に反映されます。
+
+## 出典
+
+- 出没情報：山梨県自然共生推進課（[@yamanashishizen](https://x.com/yamanashishizen)）
+- 地図：[OpenFreeMap](https://openfreemap.org) / © [OpenMapTiles](https://www.openmaptiles.org/) / © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
+- 位置（住所検索）：[国土地理院](https://maps.gsi.go.jp/development/ichiran.html)
