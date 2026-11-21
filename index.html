@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>山梨クマ出没マップ（非公式）</title>
+  <meta name="description" content="山梨県自然共生推進課のX（@yamanashishizen）のツキノワグマ出没速報を地図に表示する非公式マップです。">
+  <meta name="theme-color" content="#F4EADB">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='12.5' fill='%23D4A04C' stroke='%232E4057' stroke-width='1.5'/%3E%3Cg stroke='%232E4057' stroke-width='1.2' fill='%23FFF8EC'%3E%3Ccircle cx='9' cy='9.6' r='2.7'/%3E%3Ccircle cx='19' cy='9.6' r='2.7'/%3E%3Ccircle cx='14' cy='15' r='6.4'/%3E%3C/g%3E%3Ccircle cx='11.6' cy='14' r='.95' fill='%232E4057'/%3E%3Ccircle cx='16.4' cy='14' r='.95' fill='%232E4057'/%3E%3Cellipse cx='14' cy='16.9' rx='1.2' ry='.85' fill='%232E4057'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="topbar__title">山梨クマ出没マップ<span class="topbar__tag">非公式</span></h1>
+    <p class="topbar__updated" id="updated" aria-live="polite">読み込み中…</p>
+  </header>
+
+  <main class="map-wrap">
+    <div id="map" aria-label="ツキノワグマ出没地点の地図"></div>
+    <section class="legend" aria-labelledby="legend-title">
+      <h2 class="legend__title" id="legend-title">目撃からの時間</h2>
+      <ul class="legend__list" id="legend-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__note">
+      非公式マップです。正確な情報は元投稿と<a href="https://www.pref.yamanashi.jp/shizen/kuma2.html" target="_blank" rel="noopener">山梨県公式ページ</a>をご確認ください。
+    </p>
+    <p class="footer__credit">
+      地図：<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>
+      <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a>
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a>
+      ／位置：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>
+      ／情報：<a href="https://x.com/yamanashishizen" target="_blank" rel="noopener">山梨県自然共生推進課</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
