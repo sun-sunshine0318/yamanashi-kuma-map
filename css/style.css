@@ -358,7 +358,7 @@ button { font: inherit; color: inherit; }
   left: calc(10px + var(--safe-left));
   right: calc(10px + var(--safe-right));
   bottom: 10px;
-  max-height: min(62%, 460px);
+  max-height: min(54%, 420px);
   display: flex;
   flex-direction: column;
   padding: 14px 14px 14px 16px;
