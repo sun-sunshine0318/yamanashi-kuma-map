@@ -78,6 +78,7 @@ a { color: inherit; }
 #map {
   position: absolute;
   inset: 0;
+  z-index: 0; /* ピンが凡例より上に出ないようにする */
 }
 
 /* ---------- 凡例（左上） ---------- */

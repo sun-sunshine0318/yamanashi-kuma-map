@@ -61,8 +61,17 @@ add("landcover_wood", (l) => {
 });
 add("park", (l) => (l.paint = { "fill-color": C.green }));
 add("landuse_residential", (l) => {
+  // 住宅地だけでなく商業地・工業地なども「街区」としてくすみブルーで塗る
   delete l.maxzoom;
-  l.paint = { "fill-color": C.block, "fill-opacity": z(8, 0.7, 12, 1) };
+  l.id = "landuse_block";
+  l.filter = [
+    "match",
+    ["get", "class"],
+    ["residential", "suburb", "quarter", "neighbourhood", "commercial", "retail", "industrial", "railway", "school", "hospital", "university", "college"],
+    true,
+    false,
+  ];
+  l.paint = { "fill-color": C.block, "fill-opacity": z(8, 0.6, 12, 0.85, 14, 1) };
 });
 add("water", (l) => (l.paint = { "fill-color": C.water }));
 add("waterway", (l) => {
@@ -70,7 +79,7 @@ add("waterway", (l) => {
   l.paint = { "line-color": C.water, "line-width": z(8, 0.6, 12, 1.4, 16, 3) };
 });
 add("building", (l) => {
-  l.minzoom = 14;
+  l.minzoom = 13;
   l.paint = { "fill-color": C.building };
 });
 

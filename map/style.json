@@ -84,32 +84,32 @@
    }
   },
   {
-   "id": "landuse_residential",
+   "id": "landuse_block",
    "type": "fill",
    "source": "openmaptiles",
    "source-layer": "landuse",
    "filter": [
-    "all",
+    "match",
     [
-     "match",
-     [
-      "geometry-type"
-     ],
-     [
-      "MultiPolygon",
-      "Polygon"
-     ],
-     true,
-     false
+     "get",
+     "class"
     ],
     [
-     "==",
-     [
-      "get",
-      "class"
-     ],
-     "residential"
-    ]
+     "residential",
+     "suburb",
+     "quarter",
+     "neighbourhood",
+     "commercial",
+     "retail",
+     "industrial",
+     "railway",
+     "school",
+     "hospital",
+     "university",
+     "college"
+    ],
+    true,
+    false
    ],
    "paint": {
     "fill-color": "#A9C6C3",
@@ -122,8 +122,10 @@
       "zoom"
      ],
      8,
-     0.7,
+     0.6,
      12,
+     0.85,
+     14,
      1
     ]
    }
@@ -202,7 +204,7 @@
    "type": "fill",
    "source": "openmaptiles",
    "source-layer": "building",
-   "minzoom": 14,
+   "minzoom": 13,
    "paint": {
     "fill-color": "#95B5B2"
    }

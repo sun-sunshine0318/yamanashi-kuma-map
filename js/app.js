@@ -112,6 +112,7 @@ async function main() {
     pitchWithRotate: false,
     fadeDuration: reduceMotion ? 0 : 300,
   });
+  window.kumaMap = map; // 動作確認用
   map.touchZoomRotate.disableRotation();
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 90 }), "bottom-left");
