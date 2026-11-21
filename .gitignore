@@ -1,0 +1,6 @@
+# デザイン参考画像は第三者の作品の可能性があるため公開しない
+design-ref.*
+.env
+.env.*
+node_modules/
+.DS_Store
