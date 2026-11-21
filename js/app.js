@@ -27,11 +27,11 @@ const LOCALE = {
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 async function fontsReady() {
-  // 地図ラベルにも丸ゴシックを使うため、少しだけ読み込みを待つ（最大1.5秒）
+  // 地図ラベルにも丸ゴシックを使うため、少しだけ読み込みを待つ（最大0.6秒）
   try {
     await Promise.race([
       document.fonts.load('500 14px "Zen Maru Gothic"', "山梨県甲府市北杜身延"),
-      new Promise((r) => setTimeout(r, 1500)),
+      new Promise((r) => setTimeout(r, 600)),
     ]);
   } catch {}
 }
