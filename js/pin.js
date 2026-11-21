@@ -7,9 +7,8 @@ export const AGE = {
 
 const DAY = 24 * 60 * 60 * 1000;
 
-/** 目撃日時（なければ投稿日時）からの経過で区分する */
-export function ageOf(s, now = Date.now()) {
-  const t = Date.parse(s.sighted_at ?? s.posted_at);
+/** 目撃日時（なければ投稿日時）からの経過で区分する。t は時刻（ミリ秒） */
+export function ageOfTime(t, now = Date.now()) {
   const diff = now - t;
   if (diff <= DAY) return "new";
   if (diff <= 7 * DAY) return "week";

@@ -20,13 +20,65 @@
     <p class="topbar__updated" id="updated" aria-live="polite">読み込み中…</p>
   </header>
 
-  <main class="map-wrap">
-    <div id="map" aria-label="ツキノワグマ出没地点の地図"></div>
-    <section class="legend" aria-labelledby="legend-title">
-      <h2 class="legend__title" id="legend-title">目撃からの時間</h2>
-      <ul class="legend__list" id="legend-list"></ul>
-    </section>
-  </main>
+  <div class="layout">
+    <!-- 絞り込みと一覧：スマホでは下から引き出すシート、PCでは左側に固定 -->
+    <aside class="panel" id="panel" data-tab="list" aria-label="絞り込みと一覧">
+      <button type="button" class="panel__grip" id="panel-grip" aria-label="閉じる"><span></span></button>
+      <div class="panel__head">
+        <div class="seg" role="tablist" aria-label="表示の切り替え">
+          <button type="button" class="seg__btn" role="tab" data-tab-btn="list" aria-selected="true">一覧</button>
+          <button type="button" class="seg__btn" role="tab" data-tab-btn="filter" aria-selected="false">絞り込み</button>
+        </div>
+        <button type="button" class="icon-btn panel__close" id="panel-close" aria-label="閉じる">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <section class="panel__section panel__filter" aria-labelledby="filter-title">
+        <h2 class="panel__h" id="filter-title">絞り込み</h2>
+        <h3 class="panel__sub">期間<small>（目撃日時）</small></h3>
+        <div class="chips" id="period-chips"></div>
+        <h3 class="panel__sub">市町村<small>（複数選択できます）</small>
+          <button type="button" class="link-btn" id="muni-clear">選択を解除</button>
+        </h3>
+        <div class="chips chips--muni" id="muni-chips"></div>
+        <button type="button" class="btn btn--primary panel__done" id="filter-done">この条件で一覧を見る</button>
+      </section>
+
+      <section class="panel__section panel__list" aria-labelledby="list-title">
+        <div class="list-head">
+          <h2 class="panel__h" id="list-title">一覧</h2>
+          <p class="list-head__cond" id="filter-summary"></p>
+        </div>
+        <ul class="list" id="list"></ul>
+      </section>
+    </aside>
+
+    <main class="map-wrap">
+      <div id="map" aria-label="ツキノワグマ出没地点の地図"></div>
+
+      <section class="legend" aria-labelledby="legend-title">
+        <h2 class="legend__title" id="legend-title">目撃からの時間</h2>
+        <ul class="legend__list" id="legend-list"></ul>
+      </section>
+
+      <div class="actionbar">
+        <button type="button" class="pill" id="open-list">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="4" cy="6" r="1.4" fill="currentColor"/><circle cx="4" cy="12" r="1.4" fill="currentColor"/><circle cx="4" cy="18" r="1.4" fill="currentColor"/></svg>
+          一覧<span class="pill__sub" id="open-list-count"></span>
+        </button>
+        <button type="button" class="pill" id="open-filter">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          絞り込み<span class="pill__sub" id="open-filter-label"></span>
+        </button>
+      </div>
+
+      <article class="card" id="card" hidden aria-live="polite"></article>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="backdrop" id="backdrop" hidden></div>
 
   <footer class="footer">
     <p class="footer__note">
@@ -40,6 +92,19 @@
       ／情報：<a href="https://x.com/yamanashishizen" target="_blank" rel="noopener">山梨県自然共生推進課</a>
     </p>
   </footer>
+
+  <dialog class="dialog" id="geo-dialog" aria-labelledby="geo-title">
+    <form method="dialog">
+      <h2 class="dialog__title" id="geo-title">現在地を表示しますか？</h2>
+      <p>近くの出没情報を確認しやすいよう、地図にあなたの現在地を表示します。</p>
+      <p>このあとブラウザから「位置情報の利用」を確認する画面が出たら、<b>「許可」</b>を選んでください。</p>
+      <p class="dialog__small">位置情報はこの端末の中で地図を動かすためだけに使い、どこにも送信・保存しません。</p>
+      <div class="dialog__actions">
+        <button class="btn" value="cancel">やめる</button>
+        <button class="btn btn--primary" value="ok">現在地を表示する</button>
+      </div>
+    </form>
+  </dialog>
 
   <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
   <script type="module" src="js/app.js"></script>
