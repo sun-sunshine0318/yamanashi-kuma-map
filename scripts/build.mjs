@@ -28,6 +28,7 @@ for (const post of posts) {
   }
   sightings.push({
     id: post.id,
+    type: p.type,
     posted_at: post.created_at,
     sighted_at: p.sighted_at,
     municipality: p.municipality,
@@ -38,6 +39,7 @@ for (const post of posts) {
     lat: pos.lat,
     lng: pos.lng,
     precision: pos.precision,
+    ...(pos.broad ? { broad: true } : {}),
     ...(pos.corrected ? { corrected: true } : {}),
     source_url: `https://x.com/yamanashishizen/status/${post.id}`,
   });
@@ -60,7 +62,7 @@ const lines = [
   ...ignored.map((i) => `  - ${i.id}（${i.posted_at}）${i.reason}：${i.text.replace(/\s+/g, " ").slice(0, 60)}…`),
   ...sightings
     .filter((s) => s.precision === "municipality")
-    .map((s) => `  ※ 地区が見つからず役場付近に配置：${s.id} ${s.municipality} ${s.place_text}`),
+    .map((s) => `  ※ ${s.broad ? "広めの地区の中心に配置" : "地区が見つからず役場付近に配置"}：${s.id} ${s.municipality} ${s.place_text}`),
 ];
 console.log(lines.join("\n"));
 if (process.env.GITHUB_STEP_SUMMARY) {
