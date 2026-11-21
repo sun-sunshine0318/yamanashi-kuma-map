@@ -412,6 +412,9 @@ async function main() {
     fadeDuration: reduceMotion ? 0 : 300,
   });
   window.kumaMap = map; // 動作確認用
+  // 画面の大きさが変わったら地図も合わせる（タブが裏にある間に読み込まれた場合の対策も兼ねる）
+  new ResizeObserver(() => map.resize()).observe($("map"));
+  document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && map.resize());
   map.touchZoomRotate.disableRotation();
   map.addControl(new LocateControl(), "bottom-right");
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
