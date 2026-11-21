@@ -118,6 +118,7 @@ function pinElement(s, now) {
   el.addEventListener("click", (e) => {
     e.stopPropagation();
     openCard(sameSpot(s), s.id);
+    reveal(s);
   });
   return el;
 }
@@ -275,12 +276,23 @@ function closeCard() {
   map.getSource("approx")?.setData({ type: "FeatureCollection", features: [] });
 }
 
+/** カードに隠れない位置へ地図を動かす */
+function reveal(s, { fly = false } = {}) {
+  const card = $("card");
+  const wide = matchMedia("(min-width: 900px)").matches;
+  const offset = wide ? [-(card.offsetWidth + 24) / 2, 0] : [0, -(card.offsetHeight + 20) / 2 + 20];
+  const exact = s.precision === "place" || s.corrected;
+  // おおよその位置は円全体が見える縮尺に
+  const zoom = exact ? Math.max(map.getZoom(), fly ? 13.5 : 0) : Math.min(Math.max(map.getZoom(), 9.5), 10.5);
+  const opts = { center: [s.lng, s.lat], zoom, offset, duration: reduceMotion ? 0 : fly ? 900 : 450, essential: true };
+  fly ? map.flyTo(opts) : map.easeTo(opts);
+}
+
 function focusSighting(id) {
   const s = state.byId.get(id);
   if (!s) return;
-  const zoom = Math.max(map.getZoom(), s.precision === "place" ? 13.5 : 11.5);
-  map.flyTo({ center: [s.lng, s.lat], zoom, duration: reduceMotion ? 0 : 900, essential: true });
   openCard(sameSpot(s), id);
+  reveal(s, { fly: true });
 }
 
 /* ---------------- 現在地 ---------------- */
