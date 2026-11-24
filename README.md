@@ -1,17 +1,21 @@
-# 山梨県 ツキノワグマ出没マップ（非公式）
+# 長野県・山梨県 ツキノワグマ出没マップ（非公式）
 
 **公開ページ：https://sun-sunshine0318.github.io/yamanashi-kuma-map/**
 
-山梨県自然共生推進課の X（[@yamanashishizen](https://x.com/yamanashishizen)）が発信するツキノワグマ出没速報を、地図に表示する非公式 Web アプリです。
+次の情報を地図に表示する非公式 Web アプリです。
 
-**非公式マップです。正確な情報は元投稿と[山梨県公式ページ](https://www.pref.yamanashi.jp/shizen/kuma2.html)をご確認ください。**
+- 山梨県：山梨県自然共生推進課の X（[@yamanashishizen](https://x.com/yamanashishizen)）が発信するツキノワグマ出没速報
+- 長野県：長野県「[ツキノワグマ出没（目撃）情報](https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/kuma-map.html)」（月別の一覧 PDF。市町村単位の情報を地図用に加工して作成）
+
+**非公式マップです。正確な情報は元の発表と各県の公式ページ（[山梨県](https://www.pref.yamanashi.jp/shizen/kuma2.html)・[長野県](https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/kuma-map.html)）をご確認ください。**
 
 ## しくみ
 
 1. 外部タイマー [cron-job.org](https://console.cron-job.org/jobs) が **15分ごと** に GitHub Actions（[update.yml](.github/workflows/update.yml)）を起動します（GitHub 自身の定期実行は混雑で間引かれやすいため、1時間ごとの予備として残しています）
-2. `scripts/fetch.mjs` … X API から前回以降の新着投稿だけを取得して `data/posts.json` に追記
-3. `scripts/build.mjs` … 投稿を読み取り、国土地理院の住所検索で座標に変換して `data/sightings.json` を作成
-4. 変更があればコミット → GitHub Pages に自動で反映（数分かかります）
+2. `scripts/fetch.mjs` … 山梨県：X API から前回以降の新着投稿だけを取得して `data/posts.json` に追記
+3. `scripts/nagano.py` … 長野県：県のページから今年度の月別 PDF を探し、新しいものや更新されたものだけを読み取って `data/nagano-records.json` に保存（県のサイトの確認は1時間に1回まで）
+4. `scripts/build.mjs` … 両県のデータを地図用にまとめて `data/sightings.json` を作成（山梨県は国土地理院の住所検索で地区の位置に、長野県は市町村の役場付近に配置）
+5. 変更があればコミット → GitHub Pages に自動で反映（数分かかります）
 
 地図は MapLibre GL JS ＋ OpenFreeMap（`map/style.json` は `node scripts/make-style.mjs` で作成）。ビルド不要の静的サイトです。
 

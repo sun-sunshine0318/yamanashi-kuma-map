@@ -40,10 +40,23 @@ jobs:
           echo "::error::失敗通知のテストです（わざと失敗させています）"
           exit 1
 
-      - name: X から新着投稿を取得
+      # 片方の県が失敗しても、もう片方は更新できるよう、取得の失敗は最後にまとめて扱う
+      - name: 山梨県：X から新着投稿を取得
+        id: yamanashi
+        continue-on-error: true
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: node scripts/fetch.mjs
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 長野県：公表資料（月別 PDF）を取得
+        id: nagano
+        continue-on-error: true
+        run: |
+          pip install --quiet --disable-pip-version-check pypdf==7.1.1
+          python scripts/nagano.py
 
       - name: 読み取り・座標変換して地図用データを作成
         run: node scripts/build.mjs
@@ -60,6 +73,13 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      - name: 取得に失敗した県があれば失敗として扱う
+        if: steps.yamanashi.outcome == 'failure' || steps.nagano.outcome == 'failure'
+        run: |
+          [ "${{ steps.yamanashi.outcome }}" = "failure" ] && echo "::error::山梨県（X）の取得に失敗しました"
+          [ "${{ steps.nagano.outcome }}" = "failure" ] && echo "::error::長野県（公表資料）の取得に失敗しました"
+          exit 1
 
       # ---- 失敗したら Issue で知らせる（同じ Issue が開いている間は重ねて作らない） ----
       - name: 失敗を Issue で知らせる
@@ -84,6 +104,7 @@ jobs:
           - \`HTTP 401\` / \`HTTP 403\` … X のトークンが無効になった可能性があります。X Developer Console で Bearer Token を作り直し、\`gh secret set X_BEARER_TOKEN\` で登録し直してください。
           - \`HTTP 402\` や「credits」を含むエラー … X API の従量課金クレジットが不足しています。X Developer Console で残高を確認してください。
           - \`HTTP 5xx\` や通信エラー … 一時的な障害のことが多く、次回以降の実行で自然に直ります。
+          - 「長野県のデータを取得できませんでした」… 長野県のページや PDF の書式が変わった可能性があります。読み取りルール（\`scripts/nagano.py\`）の見直しが必要です。片方の県が失敗しても、もう片方の県の更新は続きます。
 
           次に自動更新が成功したら、この Issue は自動で閉じられます。
           EOF

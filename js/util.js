@@ -2,7 +2,12 @@
 const DAY = 24 * 60 * 60 * 1000;
 const TZ = "Asia/Tokyo";
 
-export const timeOf = (s) => Date.parse(s.sighted_at ?? s.posted_at);
+/** 目撃日時（日付だけのときは日本時間の0時）、なければ投稿日時 */
+export const timeOf = (s) => {
+  const v = s.sighted_at ?? s.posted_at;
+  return Date.parse(v.includes("T") ? v : `${v}T00:00:00+09:00`);
+};
+const hasTime = (s) => !s.sighted_at || s.sighted_at.includes("T");
 
 function parts(iso, opts) {
   const p = new Intl.DateTimeFormat("ja-JP", { timeZone: TZ, ...opts }).formatToParts(new Date(iso));
@@ -11,18 +16,25 @@ function parts(iso, opts) {
 
 /** 11月18日（火）16:00頃 */
 export function formatSighted(s) {
-  const iso = s.sighted_at ?? s.posted_at;
-  const hasTime = !s.sighted_at || s.sighted_at.includes("T");
-  const p = parts(iso, { month: "numeric", day: "numeric", weekday: "short", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
+  const p = parts(new Date(timeOf(s)).toISOString(), { month: "numeric", day: "numeric", weekday: "short", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
   const date = `${p.month}月${p.day}日（${p.weekday}）`;
-  return hasTime ? `${date}${p.hour}:${p.minute}頃` : date;
+  return hasTime(s) ? `${date}${p.hour}:${p.minute}頃` : date;
 }
 
-/** 11/18 16:00 */
+/** 11/18 16:00（時刻が無いときは 11/18） */
 export function formatShort(s) {
-  const p = parts(s.sighted_at ?? s.posted_at, { month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
-  return `${p.month}/${p.day} ${p.hour}:${p.minute}`;
+  const p = parts(new Date(timeOf(s)).toISOString(), { month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
+  return hasTime(s) ? `${p.month}/${p.day} ${p.hour}:${p.minute}` : `${p.month}/${p.day}`;
 }
+
+export const PREFS = ["山梨県", "長野県"];
+export const SOURCE = {
+  山梨県: { button: "Xの元投稿で確認する", credit: "出典：山梨県自然共生推進課（X @yamanashishizen）" },
+  長野県: {
+    button: "長野県の公表資料で確認する",
+    credit: "出典：長野県「ツキノワグマ出没（目撃）情報」（市町村単位の一覧を地図用に加工）",
+  },
+};
 
 /** 11月21日 22:27 */
 export function formatUpdated(iso) {

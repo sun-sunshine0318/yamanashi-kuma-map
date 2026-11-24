@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>山梨クマ出没マップ（非公式）</title>
-  <meta name="description" content="山梨県自然共生推進課のX（@yamanashishizen）のツキノワグマ出没速報を地図に表示する非公式マップです。">
+  <title>長野県・山梨県クマ出没マップ（非公式）</title>
+  <meta name="description" content="山梨県自然共生推進課のX（@yamanashishizen）の出没速報と、長野県のツキノワグマ出没（目撃）情報を地図に表示する非公式マップです。">
   <meta name="theme-color" content="#F4EADB">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='12.5' fill='%23D4A04C' stroke='%232E4057' stroke-width='1.5'/%3E%3Cg stroke='%232E4057' stroke-width='1.2' fill='%23FFF8EC'%3E%3Ccircle cx='9' cy='9.6' r='2.7'/%3E%3Ccircle cx='19' cy='9.6' r='2.7'/%3E%3Ccircle cx='14' cy='15' r='6.4'/%3E%3C/g%3E%3Ccircle cx='11.6' cy='14' r='.95' fill='%232E4057'/%3E%3Ccircle cx='16.4' cy='14' r='.95' fill='%232E4057'/%3E%3Cellipse cx='14' cy='16.9' rx='1.2' ry='.85' fill='%232E4057'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 </head>
 <body>
   <header class="topbar">
-    <h1 class="topbar__title">山梨クマ出没マップ<span class="topbar__tag">非公式</span></h1>
+    <h1 class="topbar__title">長野県・山梨県クマ出没マップ<span class="topbar__tag">非公式</span></h1>
     <p class="topbar__updated" id="updated" aria-live="polite">読み込み中…</p>
   </header>
 
@@ -38,10 +38,12 @@
         <h2 class="panel__h" id="filter-title">絞り込み</h2>
         <h3 class="panel__sub">期間<small>（目撃日時）</small></h3>
         <div class="chips" id="period-chips"></div>
-        <h3 class="panel__sub">市町村<small>（複数選択できます）</small>
+        <h3 class="panel__sub">県<small>（選ばなければ両県）</small></h3>
+        <div class="chips" id="pref-chips"></div>
+        <h3 class="panel__sub">市町村<small>（複数選択・件数のある市町村のみ）</small>
           <button type="button" class="link-btn" id="muni-clear">選択を解除</button>
         </h3>
-        <div class="chips chips--muni" id="muni-chips"></div>
+        <div id="muni-chips"></div>
         <button type="button" class="btn btn--primary panel__done" id="filter-done">この条件で一覧を見る</button>
       </section>
 
@@ -60,6 +62,7 @@
       <section class="legend" aria-labelledby="legend-title">
         <h2 class="legend__title" id="legend-title">目撃からの時間</h2>
         <ul class="legend__list" id="legend-list"></ul>
+        <p class="legend__note">長野県は市町村単位の<br>おおよその位置です</p>
       </section>
 
       <div class="actionbar">
@@ -82,14 +85,14 @@
 
   <footer class="footer">
     <p class="footer__note">
-      非公式マップです。正確な情報は元投稿と<a href="https://www.pref.yamanashi.jp/shizen/kuma2.html" target="_blank" rel="noopener">山梨県公式ページ</a>をご確認ください。
+      非公式マップです。正確な情報は元の発表と各県の公式ページ（<a href="https://www.pref.yamanashi.jp/shizen/kuma2.html" target="_blank" rel="noopener">山梨県</a>・<a href="https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/kuma-map.html" target="_blank" rel="noopener">長野県</a>）をご確認ください。
     </p>
     <p class="footer__credit">
       地図：<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>
       <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a>
       <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a>
       ／位置：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院</a>
-      ／情報：<a href="https://x.com/yamanashishizen" target="_blank" rel="noopener">山梨県自然共生推進課</a>
+      ／情報：<a href="https://x.com/yamanashishizen" target="_blank" rel="noopener">山梨県自然共生推進課（X）</a>・<a href="https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/kuma-map.html" target="_blank" rel="noopener">長野県「ツキノワグマ出没（目撃）情報」</a>（加工して作成）
     </p>
   </footer>
 

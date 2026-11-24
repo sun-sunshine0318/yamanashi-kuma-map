@@ -10,13 +10,16 @@ import {
   escapeHtml,
   storageGet,
   storageSet,
+  SOURCE,
 } from "./util.js";
 import { initPanel } from "./panel.js";
 
-const YAMANASHI = [
-  [138.18, 35.16],
-  [139.14, 35.97],
+// 長野県・山梨県が収まる範囲
+const AREA = [
+  [137.3, 35.15],
+  [139.15, 37.05],
 ];
+const CARD_LIMIT = 100;
 const CLUSTER_MAX_ZOOM = 14;
 const Z_BASE = Date.parse("2020-01-01T00:00:00Z");
 
@@ -138,7 +141,7 @@ function clusterElement(p, coords, now) {
     const zoom = await src.getClusterExpansionZoom(p.cluster_id);
     if (zoom > CLUSTER_MAX_ZOOM || map.getZoom() >= CLUSTER_MAX_ZOOM) {
       // ほぼ同じ場所に重なっている → まとめてカードに表示
-      const leaves = await src.getClusterLeaves(p.cluster_id, 100, 0);
+      const leaves = await src.getClusterLeaves(p.cluster_id, 1000, 0);
       openCard(leaves.map((f) => state.byId.get(f.properties.id)).filter(Boolean).sort((a, b) => timeOf(b) - timeOf(a)));
     } else {
       map.easeTo({ center: coords, zoom: zoom + 0.2, duration: reduceMotion ? 0 : 600 });
@@ -216,6 +219,9 @@ function sameSpot(s) {
 
 function precisionHtml(s) {
   if (s.corrected) return `<p class="card__precision">位置は手動で確認・修正済みです。</p>`;
+  if (s.pref === "長野県") {
+    return `<p class="card__precision is-approx"><b>おおよその位置です。</b>長野県の公表資料は市町村単位のため、市町村の役場付近に表示しています。</p>`;
+  }
   if (s.precision === "place") {
     return `<p class="card__precision">地区（大字）の代表地点に表示しています。目印の場所とは数百m〜数kmずれることがあります。</p>`;
   }
@@ -226,16 +232,18 @@ function precisionHtml(s) {
 function cardItemHtml(s) {
   const age = ageOfTime(timeOf(s));
   const place = `${escapeHtml(s.municipality)}${s.place_text ? " " + escapeHtml(s.place_text) : ""}`;
+  const src = SOURCE[s.pref] ?? SOURCE["山梨県"];
   return `
 <div class="card__item">
   <div class="card__meta">
     <span class="badge badge--${age}">${TYPE_LABEL[s.type] ?? "目撃"}</span>
     <time datetime="${escapeHtml(s.sighted_at ?? s.posted_at)}">${formatSighted(s)}</time>
   </div>
-  <h3 class="card__place">${place}</h3>
+  <h3 class="card__place"><span class="pref-tag">${escapeHtml(s.pref ?? "山梨県")}</span>${place}</h3>
   <p class="card__summary">${escapeHtml(s.summary)}</p>
   ${precisionHtml(s)}
-  <a class="btn btn--primary" href="${escapeHtml(s.source_url)}" target="_blank" rel="noopener">Xの元投稿で確認する<span aria-hidden="true"> ↗</span></a>
+  <a class="btn btn--primary" href="${escapeHtml(s.source_url)}" target="_blank" rel="noopener">${src.button}<span aria-hidden="true"> ↗</span></a>
+  <p class="card__credit">${escapeHtml(src.credit)}</p>
 </div>`;
 }
 
@@ -243,11 +251,12 @@ function openCard(items, focusId) {
   if (!items.length) return;
   const card = $("card");
   selectedId = focusId ?? items[0].id;
-  const head = items.length > 1 ? `<p class="card__count">この付近の出没情報 <b>${items.length}</b> 件</p>` : "";
+  const more = items.length > CARD_LIMIT ? `<br><small>新しい順に${CARD_LIMIT}件まで表示しています。すべては一覧でご覧ください。</small>` : "";
+  const head = items.length > 1 ? `<p class="card__count">この付近の出没情報 <b>${items.length}</b> 件${more}</p>` : "";
   card.innerHTML = `
 <button type="button" class="icon-btn card__close" aria-label="閉じる"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
 ${head}
-<div class="card__scroll">${items.map(cardItemHtml).join("")}</div>`;
+<div class="card__scroll">${items.slice(0, CARD_LIMIT).map(cardItemHtml).join("")}</div>`;
   card.querySelector(".card__close").addEventListener("click", closeCard);
   card.hidden = false;
   document.body.classList.add("has-card");
@@ -350,8 +359,8 @@ function locate(button) {
         meMarker = new maplibregl.Marker({ element: el }).setLngLat([lng, lat]).addTo(map);
       } else meMarker.setLngLat([lng, lat]);
       map.getSource("me-accuracy")?.setData(circlePolygon([lng, lat], Math.min(accuracy, 3000) / 1000));
-      const inside = lng > 138.1 && lng < 139.2 && lat > 35.1 && lat < 36.0;
-      if (!inside) toast("現在地は山梨県の外のようです。");
+      const inside = lng > 137.3 && lng < 139.2 && lat > 35.1 && lat < 37.05;
+      if (!inside) toast("現在地は長野県・山梨県の外のようです。");
       map.flyTo({ center: [lng, lat], zoom: Math.max(map.getZoom(), 12.5), duration: reduceMotion ? 0 : 900 });
     },
     (err) => {
@@ -408,11 +417,11 @@ async function main() {
   map = new maplibregl.Map({
     container: "map",
     style: "map/style.json",
-    bounds: YAMANASHI,
+    bounds: AREA,
     fitBoundsOptions: { padding: 24 },
     maxBounds: [
-      [137.4, 34.6],
-      [139.9, 36.5],
+      [136.4, 34.5],
+      [140.0, 37.6],
     ],
     minZoom: 7,
     maxZoom: 17,
