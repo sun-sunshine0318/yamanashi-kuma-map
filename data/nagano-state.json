@@ -1,0 +1,61 @@
+{
+ "last_success": "2026-11-24T18:07:09+09:00",
+ "pdfs": {
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/430mokugeki.pdf": {
+   "month": "2026-04",
+   "length": "554499",
+   "modified": "Fri, 01 May 2026 06:00:04 GMT",
+   "sha256": "9d3a5ced9daf523ca27b9124efa601d3478ab6f994f16de1e76278ae892a903b",
+   "rows": 61
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/531mokugeki3.pdf": {
+   "month": "2026-05",
+   "length": "728399",
+   "modified": "Fri, 04 Sep 2026 06:00:04 GMT",
+   "sha256": "99141ec2966f852f758631fd4e5c65e29880a90d9e0796ff12d98f530e764755",
+   "rows": 207
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/630mokugeki3.pdf": {
+   "month": "2026-06",
+   "length": "1156855",
+   "modified": "Fri, 28 Aug 2026 06:00:04 GMT",
+   "sha256": "b4bc4cb88166c3af4054aa4e899142924d39eaeeb7fb269f6775dadaf7ca78dc",
+   "rows": 538
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/731mokugeki4.pdf": {
+   "month": "2026-07",
+   "length": "894843",
+   "modified": "Fri, 21 Aug 2026 05:00:04 GMT",
+   "sha256": "882c2b8756db21faeadaae1f95dbddbb6773b83a9ea897cec90431aeadb79eb7",
+   "rows": 266
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/831mokugeki2.pdf": {
+   "month": "2026-08",
+   "length": "711688",
+   "modified": "Fri, 11 Sep 2026 06:00:04 GMT",
+   "sha256": "cd9593077931f3e816662e08afd242dfc90be7c42565897296cf33731840c0ae",
+   "rows": 155
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/930mokugeki3.pdf": {
+   "month": "2026-09",
+   "length": "577913",
+   "modified": "Fri, 09 Oct 2026 06:00:05 GMT",
+   "sha256": "aa28ffc31b65af55a9555571acbd0e416598f4bcf57dabdab8a77e5a5f3a4fa0",
+   "rows": 99
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1030mokugeki1.pdf": {
+   "month": "2026-10",
+   "length": "533480",
+   "modified": "Fri, 06 Nov 2026 06:00:04 GMT",
+   "sha256": "9d19e2421e6a6c11c35199c80ba599df3b691ab3b64108ada0cd9a288ce76300",
+   "rows": 61
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf": {
+   "month": "2026-11",
+   "length": "389731",
+   "modified": "Fri, 20 Nov 2026 06:00:04 GMT",
+   "sha256": "e1a99c6582f68393e44adfed29534fe695763df78d77fb8ff586be79b22539c7",
+   "rows": 28
+  }
+ }
+}
