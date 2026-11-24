@@ -2,7 +2,8 @@ name: 出没情報を更新
 
 on:
   schedule:
-    - cron: "*/15 * * * *" # 15分ごと（GitHub側の混雑で数分〜十数分遅れることがあります）
+    # 15分ごと。毎時0分・15分などはGitHub全体が混雑して実行が間引かれやすいので、少しずらしている
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
     inputs:
       test_failure:
