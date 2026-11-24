@@ -8,7 +8,7 @@
 
 ## しくみ
 
-1. GitHub Actions（[update.yml](.github/workflows/update.yml)）が **15分ごと** に動きます
+1. 外部タイマー [cron-job.org](https://console.cron-job.org/jobs) が **15分ごと** に GitHub Actions（[update.yml](.github/workflows/update.yml)）を起動します（GitHub 自身の定期実行は混雑で間引かれやすいため、1時間ごとの予備として残しています）
 2. `scripts/fetch.mjs` … X API から前回以降の新着投稿だけを取得して `data/posts.json` に追記
 3. `scripts/build.mjs` … 投稿を読み取り、国土地理院の住所検索で座標に変換して `data/sightings.json` を作成
 4. 変更があればコミット → GitHub Pages に自動で反映（数分かかります）
@@ -21,6 +21,7 @@
 |---|---|
 | 自動更新が失敗した | 「自動更新エラー」ラベルの Issue が自動で作られます。本文の対処を確認してください。次に成功すると自動で閉じます |
 | X のトークンを変えたい | `gh secret set X_BEARER_TOKEN` で登録し直す |
+| 15分ごとの更新が止まった | cron-job.org にログインし、ジョブ「山梨クマ出没マップ 自動更新」の履歴（HISTORY）を確認。`401` なら GitHub の鍵（Fine-grained token「yamanashi-kuma-map-timer」、権限は Actions の読み書きのみ）を作り直して Authorization ヘッダーの `Bearer ` のうしろに貼り直す |
 | すぐに更新したい | GitHub の Actions →「出没情報を更新」→「Run workflow」 |
 | ピンの位置を直したい | 下の「位置を手動で直すには」 |
 | 投稿の書式が変わった | Actions の実行結果の Summary に「地図に出さない投稿」が出ます。`scripts/lib/parse.mjs` のルールを直し、`node scripts/build.mjs` で作り直せます（X API は使いません） |

@@ -2,8 +2,9 @@ name: 出没情報を更新
 
 on:
   schedule:
-    # 15分ごと。毎時0分・15分などはGitHub全体が混雑して実行が間引かれやすいので、少しずらしている
-    - cron: "7,22,37,52 * * * *"
+    # 主なタイマーは外部の cron-job.org（15分ごとに workflow_dispatch で起動）。
+    # GitHub の定期実行は混雑で間引かれやすいため、1時間ごとの予備としてだけ残している。
+    - cron: "52 * * * *"
   workflow_dispatch:
     inputs:
       test_failure:
