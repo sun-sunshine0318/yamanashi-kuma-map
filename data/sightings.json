@@ -1,7 +1,23 @@
 {
-  "updated_at": "2026-11-25T00:16:06.566Z",
-  "count": 1620,
+  "updated_at": "2026-11-26T00:15:49.361Z",
+  "count": 1622,
   "sightings": [
+    {
+      "id": "2125741829635318116",
+      "pref": "山梨県",
+      "type": "sighting",
+      "posted_at": "2026-11-26T00:02:01.000Z",
+      "sighted_at": "2026-11-24T16:00:00+09:00",
+      "municipality": "身延町",
+      "place_text": "梨子",
+      "landmark": "梨子公民館付近",
+      "summary": "梨子公民館付近で目撃",
+      "raw_text": "身延町において、以下のとおりツキノワグマの目撃情報がありました。\n・目撃日時：令和8年11月24日　午後4時00分頃\n・目撃場所：身延町 梨子地内　梨子公民館付近",
+      "lat": 35.446205,
+      "lng": 138.389542,
+      "precision": "place",
+      "source_url": "https://x.com/yamanashishizen/status/2125741829635318116"
+    },
     {
       "id": "2125380094965555285",
       "pref": "山梨県",
@@ -145,6 +161,22 @@
       "lng": 138.963318,
       "precision": "place",
       "source_url": "https://x.com/yamanashishizen/status/2125095716720918543"
+    },
+    {
+      "id": "2125741956102029643",
+      "pref": "山梨県",
+      "type": "sighting",
+      "posted_at": "2026-11-26T00:02:31.000Z",
+      "sighted_at": "2026-11-20T13:30:00+09:00",
+      "municipality": "富士吉田市",
+      "place_text": "上吉田",
+      "landmark": "富士北麓公園入口付近",
+      "summary": "富士北麓公園入口付近で目撃",
+      "raw_text": "富士吉田市において、以下のとおりツキノワグマの目撃情報がありました。\n・目撃日時：令和8年11月20日　午後1時30分頃\n・目撃場所：富士吉田市 上吉田地内　富士北麓公園入口付近",
+      "lat": 35.426395,
+      "lng": 138.753159,
+      "precision": "place",
+      "source_url": "https://x.com/yamanashishizen/status/2125741956102029643"
     },
     {
       "id": "2125059476596379978",
