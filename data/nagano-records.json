@@ -1,5 +1,20 @@
 [
  {
+  "id": "nagano-23e1eeec103f",
+  "month": "2026-11",
+  "date": "2026-11-23",
+  "time": "11:30",
+  "municipality": "小川村",
+  "area_type": "里地",
+  "kind": "目撃",
+  "size": "成獣",
+  "count": "1頭",
+  "note": "11時30分ごろ、県道を通行中に目撃",
+  "row_text": "2026/11/23 小川村 里地 目撃 成獣 １頭 11時30分ごろ、県道を通行中に目撃",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
+  "first_seen": "2026-11-27T15:45:51+09:00"
+ },
+ {
   "id": "nagano-d4518b43f93c",
   "month": "2026-11",
   "date": "2026-11-18",
@@ -11,7 +26,7 @@
   "count": "1頭",
   "note": "走り去る後ろ姿を目撃",
   "row_text": "2026/11/18 岡谷市 林内 目撃 幼獣 １頭 走り去る後ろ姿を目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-18T23:59:00+09:00"
  },
  {
@@ -26,7 +41,7 @@
   "count": "1頭",
   "note": "12:00、山際でクマ１頭の目撃",
   "row_text": "2026/11/17 中野市 林内 目撃 成獣 １頭 12:00、山際でクマ１頭の目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-17T23:59:00+09:00"
  },
  {
@@ -41,7 +56,7 @@
   "count": "1頭",
   "note": "午前8時頃、柿食べて山へ",
   "row_text": "2026/11/16 麻績村 里地 目撃 成獣 １頭 午前8時頃、柿食べて山へ",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-16T23:59:00+09:00"
  },
  {
@@ -56,7 +71,7 @@
   "count": "1頭",
   "note": "21:20頃",
   "row_text": "2026/11/16 白馬村 里地 目撃 成獣 １頭 21:20頃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-16T23:59:00+09:00"
  },
  {
@@ -71,7 +86,7 @@
   "count": "2頭",
   "note": "11時30分ごろ、村道通行人が柿の木付近で小熊2頭を目撃",
   "row_text": "2026/11/16 小川村 里地 目撃 幼獣 ２頭 11時30分ごろ、村道通行人が柿の木付近で小熊2頭を目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-16T23:59:00+09:00"
  },
  {
@@ -86,7 +101,7 @@
   "count": "1頭",
   "note": "午前６時30分頃、走行中の自家用車内から目撃。山林内へ入って行った。",
   "row_text": "2026/11/15 池田町 林内 目撃 幼獣 １頭 午前６時30分頃、走行中の自家用車内から目撃。山林内へ入って行った。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-15T23:59:00+09:00"
  },
  {
@@ -101,7 +116,7 @@
   "count": "1頭",
   "note": "",
   "row_text": "2026/11/14 佐久穂町 里地 目撃 成獣 １頭",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-14T23:59:00+09:00"
  },
  {
@@ -116,7 +131,7 @@
   "count": "2頭",
   "note": "9:00頃、川を対岸に横断するのを目撃する",
   "row_text": "2026/11/14 軽井沢町 林内 目撃 親子 ２頭 9:00頃、川を対岸に横断するのを目撃する",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-14T23:59:00+09:00"
  },
  {
@@ -131,7 +146,7 @@
   "count": "1頭",
   "note": "若めの成獣、北東から南西方向へ向け県道を横断",
   "row_text": "2026/11/14 信濃町 林内 目撃 成獣 １頭 若めの成獣、北東から南西方向へ向け県道を横断",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-14T23:59:00+09:00"
  },
  {
@@ -146,7 +161,7 @@
   "count": "1頭",
   "note": "16:35、山際でクマ１頭の目撃",
   "row_text": "2026/11/14 中野市 林内 目撃 成獣 １頭 16:35、山際でクマ１頭の目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-14T23:59:00+09:00"
  },
  {
@@ -161,7 +176,7 @@
   "count": "1頭",
   "note": "14:20頃",
   "row_text": "2026/11/13 白馬村 里地 目撃 成獣 １頭 14:20頃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-13T23:59:00+09:00"
  },
  {
@@ -176,7 +191,7 @@
   "count": "1頭",
   "note": "15時頃、柿食べて薮へ、以後目撃なし",
   "row_text": "2026/11/13 麻績村 里地 目撃 成獣 １頭 15時頃、柿食べて薮へ、以後目撃なし",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-13T23:59:00+09:00"
  },
  {
@@ -191,7 +206,7 @@
   "count": "1頭",
   "note": "13:20頃、東へ",
   "row_text": "2026/11/12 白馬村 里地 目撃 成獣 １頭 13:20頃、東へ",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-12T23:59:00+09:00"
  },
  {
@@ -206,7 +221,7 @@
   "count": "1頭",
   "note": "22:00頃、運転中、北側へ移動するのを目撃する。",
   "row_text": "2026/11/12 軽井沢町 里地 目撃 幼獣 １頭 22:00頃、運転中、北側へ移動するのを目撃する。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-12T23:59:00+09:00"
  },
  {
@@ -221,7 +236,7 @@
   "count": "1頭",
   "note": "20時40分頃　JR飯田線運転手が線路上で目撃",
   "row_text": "2026/11/12 泰阜村 林内 目撃 成獣 １頭 20時40分頃　JR飯田線運転手が線路上で目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-12T23:59:00+09:00"
  },
  {
@@ -236,7 +251,7 @@
   "count": "1頭",
   "note": "22:30頃、西に向かうのを目撃した。",
   "row_text": "2026/11/12 軽井沢町 里地 目撃 成獣 １頭 22:30頃、西に向かうのを目撃した。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-12T23:59:00+09:00"
  },
  {
@@ -251,7 +266,7 @@
   "count": "1頭",
   "note": "",
   "row_text": "2026/11/11 坂城町 里地 目撃 不明 １頭",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-11T23:59:00+09:00"
  },
  {
@@ -266,7 +281,7 @@
   "count": "1頭",
   "note": "15:18 クマは地域柵の山側にいて、南方向に逃げていった。",
   "row_text": "2026/11/11 長野市 里地 目撃 成獣 １頭 15:18 クマは地域柵の山側にいて、南方向に逃げていった。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-11T23:59:00+09:00"
  },
  {
@@ -281,7 +296,7 @@
   "count": "1頭",
   "note": "13:20頃、登山道を下っている最中に目撃する。",
   "row_text": "2026/11/08 軽井沢町 林内 目撃 成獣 １頭 13:20頃、登山道を下っている最中に目撃する。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-08T23:59:00+09:00"
  },
  {
@@ -296,7 +311,7 @@
   "count": "1頭",
   "note": "18:00頃目撃",
   "row_text": "2026/11/08 飯田市 里地 目撃 成獣 １頭 18:00頃目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-08T23:59:00+09:00"
  },
  {
@@ -311,7 +326,7 @@
   "count": "1頭",
   "note": "錯誤捕獲からの緊急捕獲（くくり罠）",
   "row_text": "2026/11/05 下條村 林内 目撃 成獣 １頭 錯誤捕獲からの緊急捕獲（くくり罠）",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-05T23:59:00+09:00"
  },
  {
@@ -326,7 +341,7 @@
   "count": "1頭",
   "note": "新町区癒しの丘付近で目撃",
   "row_text": "2026/11/05 辰野町 里地 目撃 成獣 １頭 新町区癒しの丘付近で目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-05T23:59:00+09:00"
  },
  {
@@ -341,7 +356,7 @@
   "count": "2頭",
   "note": "13:30頃目撃",
   "row_text": "2026/11/04 飯田市 里地 目撃 親子 ２頭 13:30頃目撃",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-04T23:59:00+09:00"
  },
  {
@@ -356,7 +371,7 @@
   "count": "1頭",
   "note": "4:00頃、窓から庭を通過するのを目撃した。",
   "row_text": "2026/11/03 軽井沢町 林内 目撃 成獣 １頭 4:00頃、窓から庭を通過するのを目撃した。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-03T23:59:00+09:00"
  },
  {
@@ -371,7 +386,7 @@
   "count": "1頭",
   "note": "錯誤捕獲（くくり罠）からの緊急捕獲",
   "row_text": "2026/11/03 下條村 里地 目撃 成獣 １頭 錯誤捕獲（くくり罠）からの緊急捕獲",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-03T23:59:00+09:00"
  },
  {
@@ -386,7 +401,7 @@
   "count": "1頭",
   "note": "",
   "row_text": "2026/11/03 須坂市 里地 目撃 成獣 １頭",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-03T23:59:00+09:00"
  },
  {
@@ -401,7 +416,7 @@
   "count": "1頭",
   "note": "錯誤捕獲（くくり罠）からの緊急捕獲。",
   "row_text": "2026/11/03 下條村 林内 目撃 成獣 １頭 錯誤捕獲（くくり罠）からの緊急捕獲。",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-03T23:59:00+09:00"
  },
  {
@@ -416,7 +431,7 @@
   "count": "不明",
   "note": "17:40 県道を東に横切った",
   "row_text": "2026/11/02 箕輪町 里地 目撃 不明 不明 17:40 県道を東に横切った",
-  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/1119mokugeki.pdf",
+  "pdf_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf",
   "first_seen": "2026-11-02T23:59:00+09:00"
  },
  {

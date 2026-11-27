@@ -1,5 +1,5 @@
 {
- "last_success": "2026-11-27T14:45:47+09:00",
+ "last_success": "2026-11-27T15:45:51+09:00",
  "pdfs": {
   "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/430mokugeki.pdf": {
    "month": "2026-04",
@@ -56,6 +56,13 @@
    "modified": "Fri, 20 Nov 2026 06:00:04 GMT",
    "sha256": "e1a99c6582f68393e44adfed29534fe695763df78d77fb8ff586be79b22539c7",
    "rows": 28
+  },
+  "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/20261126mokugeki.pdf": {
+   "month": "2026-11",
+   "length": "390423",
+   "modified": "Fri, 27 Nov 2026 06:00:04 GMT",
+   "sha256": "69a63718096f6e5f169683a9e9a640234a36de20cbcd6bbf524923fa0d599ce3",
+   "rows": 29
   }
  }
 }

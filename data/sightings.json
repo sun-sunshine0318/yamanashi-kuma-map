@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-26T00:15:49.361Z",
-  "count": 1622,
+  "updated_at": "2026-11-27T06:45:53.183Z",
+  "count": 1623,
   "sightings": [
     {
       "id": "2125741829635318116",
@@ -49,6 +49,21 @@
       "lng": 139.108612,
       "precision": "municipality",
       "source_url": "https://x.com/yamanashishizen/status/2125380465888792980"
+    },
+    {
+      "id": "nagano-23e1eeec103f",
+      "pref": "長野県",
+      "type": "sighting",
+      "posted_at": "2026-11-27T15:45:51+09:00",
+      "sighted_at": "2026-11-23T11:30:00+09:00",
+      "municipality": "小川村",
+      "place_text": "",
+      "summary": "里地で目撃（成獣・1頭）：11時30分ごろ、県道を通行中に目撃",
+      "raw_text": "2026/11/23 小川村 里地 目撃 成獣 １頭 11時30分ごろ、県道を通行中に目撃",
+      "lat": 36.617241,
+      "lng": 137.974747,
+      "precision": "municipality",
+      "source_url": "https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/kuma-map.html"
     },
     {
       "id": "2125380425610899867",
