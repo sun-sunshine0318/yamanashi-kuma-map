@@ -755,6 +755,12 @@
   "山梨県都留市法能天神山": {
     "found": false
   },
+  "山梨県都留市田野倉": {
+    "found": true,
+    "kind": "exact",
+    "lng": 138.938126,
+    "lat": 35.591908
+  },
   "山梨県鳴沢村富士山": {
     "found": true,
     "kind": "exact",
